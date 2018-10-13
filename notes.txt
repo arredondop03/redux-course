@@ -1,0 +1,32 @@
+State
+
+All the important stuff behid the scenes.
+It is less about data, more about the pure UI only State
+ex. Is the dropdown open? Should it be open? Is the user Authenticated?
+
+Determines what should get rendered in the screen
+What we see in the screen
+
+-----------------------------------------------------------------------------
+
+Redux
+
+Redux is a complete different and independent library from React
+It is a central store. It stores the entire application state.
+Lets think about is as a giant JavaScript object
+
+Component --->  Manipulate the app state. It will make the app unpredictable. 
+WE woudlnt be able to see where the app crashed if we make a mistake
+Defined and clear process of how the state might change
+Action (messenger) ---> Its a pre-defined information package that we will pass to redux.
+ex. Add ingredient. We will have to define in this action which ingredient
+It doenst hold any logic. It doesnt know how to update the store.
+
+
+Reducer ---> What changes the store. It is in the end a pure function and recieves the action and the old state as inputs
+then, it spits out an updated state. 
+It MUST execute a sync code only. No async, no side effects and no http requests. No delay
+updates the central store's state with a new state. It can be based on an old state but it will always be tecnically and new state.
+To get the new state back to the component the store will trigger SUBSCRIPTIONS 
+the component can subscribe state updates and it gets the state as a prop
+ 
